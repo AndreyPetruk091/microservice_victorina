@@ -1,0 +1,14 @@
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.AssemblyInfoInputs.cache
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.AssemblyInfo.cs
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.csproj.CoreCompileInputs.cache
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\bin\Debug\net8.0\QuizMicroservice.exe
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\bin\Debug\net8.0\QuizMicroservice.deps.json
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\bin\Debug\net8.0\QuizMicroservice.runtimeconfig.json
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\bin\Debug\net8.0\QuizMicroservice.dll
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\bin\Debug\net8.0\QuizMicroservice.pdb
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.dll
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\refint\QuizMicroservice.dll
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.pdb
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\QuizMicroservice.genruntimeconfig.cache
+C:\Users\Пекарня\source\repos\QuizMicroservice\QuizMicroservice\obj\Debug\net8.0\ref\QuizMicroservice.dll
