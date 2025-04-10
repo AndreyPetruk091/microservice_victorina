@@ -1,8 +1,8 @@
-﻿using QuizMicroservice.Domain.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using QuizMicroservice.Domain.Domain.Entities;
 
-namespace QuizMicroservice.Domain.Entities
+namespace QuizMicroservice.Domain
 {
     public class QuizService
     {
@@ -38,12 +38,7 @@ namespace QuizMicroservice.Domain.Entities
         public List<Question> GetQuestions(Guid quizId)
         {
             var quiz = _quizzes.Find(q => q.Id == quizId);
-            return quiz?.Questions ?? new List<Question>(); // Возвращаем пустой список, если викторина не найдена
-        }
-
-        public List<Quiz> GetAllQuizzes()
-        {
-            return _quizzes;
+            return quiz?.Questions ?? new List<Question>();
         }
 
         public bool RemoveQuiz(Guid quizId)
@@ -52,9 +47,9 @@ namespace QuizMicroservice.Domain.Entities
             if (quiz != null)
             {
                 _quizzes.Remove(quiz);
-                return true; // Успешное удаление
+                return true;
             }
-            return false; // Викторина не найдена
+            return false;
         }
     }
 }

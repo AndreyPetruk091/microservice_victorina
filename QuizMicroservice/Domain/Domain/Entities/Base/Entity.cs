@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace QuizMicroservice.Domain.Domain.Entities.Base
 {
-       public abstract class EntityBase
-        {
-            public Guid Id { get; private set; }
+    public abstract class EntityBase
+    {
+        public Guid Id { get; private set; }
 
-            protected EntityBase()
-            {
-                Id = Guid.NewGuid();
-            }
+        protected EntityBase()
+        {
+            Id = Guid.NewGuid();
         }
- }
+    }
+}

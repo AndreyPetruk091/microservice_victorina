@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using QuizMicroservice.Domain.Domain.Entities.Base;
+﻿using QuizMicroservice.Domain.Domain.Entities.Base;
 using QuizMicroservice.Domain.Domain.Enums;
 using QuizMicroservice.Domain.Domain.Exceptions;
+using System;
+using System.Collections.Generic;
 
 namespace QuizMicroservice.Domain.Domain.Entities
 {

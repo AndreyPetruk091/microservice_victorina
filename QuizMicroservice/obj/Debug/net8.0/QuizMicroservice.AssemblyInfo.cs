@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuizMicroservice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f932b31bfac00019ba3cc019810a13ca1e9317db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df4a16175667e67c88fe772507f1e94d6a198ccd")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuizMicroservice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuizMicroservice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

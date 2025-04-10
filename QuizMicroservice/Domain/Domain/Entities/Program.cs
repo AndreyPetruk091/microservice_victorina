@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace QuizMicroservice.Domain
+namespace QuizMicroservice.Domain.Domain.Entities
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            var quizService = new QuizService(); // Создаем экземпляр класса QuizService
+            var quizService = new QuizService(); 
 
             // create quiz
             var quiz = new Quiz("General Knowledge");
@@ -31,7 +31,7 @@ namespace QuizMicroservice.Domain
 
             // remaining questions in quiz 
             var remainingQuestions = quizService.GetQuestions(quiz.Id);
-            Console.WriteLine($"Remaining questions in quiz '{quiz.Title}': {remainingQuestions.Count}");
+            Console.WriteLine($"Remaining questions in quiz '{quiz.Title}'");
         }
     }
 }
