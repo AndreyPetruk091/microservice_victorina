@@ -1,5 +1,6 @@
 ﻿using QuizMicroservice.Domain.Domain.Entities.Base;
-using QuizMicroservice.Domain.Domain.Exceptions;
+using QuizMicroservice.Domain.Domain.ValueObjects;
+using QuizMicroservice.Domain.Domain.ValueObjects.Exceptions.ExeptionMasseges;
 using System;
 using System.Collections.Generic;
 
@@ -7,9 +8,9 @@ namespace QuizMicroservice.Domain.Domain.Entities
 {
     public class Participant : EntityBase
     {
-        public string Username { get; private set; }
+        public Username Username { get; private set; }// сделано
 
-        public Participant(string username)
+        public Participant(Username Username)
         {
             if (string.IsNullOrWhiteSpace(username))
                 throw new UsernameException("Username cannot be empty.");

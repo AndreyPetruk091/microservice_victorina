@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Domain.Interfaces;
 
-namespace Domain.ValueObjects.Base
+namespace QuizMicroservice.Domain.ValueObjects.Base
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {
