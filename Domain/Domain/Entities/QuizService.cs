@@ -1,55 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using QuizMicroservice.Domain.Domain.Entities;
+﻿using QuizMicroservice.Domain.Domain.Entities;
+using QuizMicroservice.Domain.Repositories.Abstractions;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace QuizMicroservice.Domain
+namespace QuizMicroservice.Domain.Services
 {
     public class QuizService
     {
-        private readonly List<Quiz> _quizzes;
+        private readonly IQuizRepository _quizRepo;
+        private readonly IQuestionRepository _questionRepo;
 
-        public QuizService()
+        public QuizService(IQuizRepository quizRepo, IQuestionRepository questionRepo)
         {
-            _quizzes = new List<Quiz>();
+            _quizRepo = quizRepo;
+            _questionRepo = questionRepo;
         }
 
-        public void CreateQuiz(Quiz quiz)
+        public async Task CreateQuizAsync(Quiz quiz, CancellationToken ct)
         {
-            if (quiz == null)
-                throw new ArgumentNullException(nameof(quiz), "Quiz cannot be null.");
-
-            _quizzes.Add(quiz);
+            await _quizRepo.AddAsync(quiz, ct);
         }
 
-        public void ManageQuestions(Guid quizId, Question question)
+        public async Task AddQuestionToQuizAsync(Guid quizId, Question question, CancellationToken ct)
         {
-            if (question == null)
-                throw new ArgumentNullException(nameof(question), "Question cannot be null.");
-
-            var existingQuiz = _quizzes.Find(q => q.Id == quizId);
-            if (existingQuiz == null)
-            {
-                throw new ArgumentException("Quiz does not exist.", nameof(quizId));
-            }
-
-            existingQuiz.AddQuestion(question);
-        }
-
-        public List<Question> GetQuestions(Guid quizId)
-        {
-            var quiz = _quizzes.Find(q => q.Id == quizId);
-            return quiz?.Questions ?? new List<Question>();
-        }
-
-        public bool RemoveQuiz(Guid quizId)
-        {
-            var quiz = _quizzes.Find(q => q.Id == quizId);
-            if (quiz != null)
-            {
-                _quizzes.Remove(quiz);
-                return true;
-            }
-            return false;
+            var quiz = await _quizRepo.GetByIdAsync(quizId, ct);
+            quiz.AddQuestion(question);
+            await _quizRepo.UpdateAsync(quiz, ct);
         }
     }
 }

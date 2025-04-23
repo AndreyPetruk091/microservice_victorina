@@ -16,7 +16,35 @@ namespace Domain.Validators
 		{
 			if (username == null)
 				throw new ArgumentNullException(
-					nameof(username),
+					nameof(username),using QuizMicroservice.Domain.Domain.ValueObjects.Base;
+using QuizMicroservice.Domain.Domain.ValueObjects.Exceptions;
+using System.Text.RegularExpressions;
+
+namespace QuizMicroservice.Domain.Domain.ValueObjects.Validators
+{
+    public class UsernameValidator : IValidator<Username>
+    {
+        private const int MinLength = 3;
+        private const int MaxLength = 50;
+
+        public void Validate(Username username)
+        {
+            var value = username.Value;
+
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ValidationException(ExceptionMessages.EmptyValue);
+
+            if (value.Length < MinLength)
+                throw new ValidationException($"Username must be at least {MinLength} characters");
+
+            if (value.Length > MaxLength)
+                throw new ValidationException($"Username cannot exceed {MaxLength} characters");
+
+            if (!Regex.IsMatch(value, @"^[a-zA-Z0-9_\-\.]+$"))
+                throw new ValidationException("Username contains invalid characters");
+        }
+    }
+}
 					ExceptionMessages.Format(ExceptionMessages.NullValue, nameof(Username)));
 
 			var value = username.Value;

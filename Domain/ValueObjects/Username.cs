@@ -1,29 +1,20 @@
+using QuizMicroservice.Domain.Domain.ValueObjects.Base;
+using QuizMicroservice.Domain.Domain.ValueObjects.Validators;
+using System.Collections.Generic;
 
-using QuizMicroservice.Domain.Domain.Interfaces;
-using QuizMicroservice.Domain.Domain.Validators;
-using QuizMicroservice.Domain.System.Collections.Generic;
-using QuizMicroservice.Domain.Domain.ValueObjects;
-
-namespace QuizMicroservice.Domain.ValueObjects
-
-public class Username : ValueObject
+namespace QuizMicroservice.Domain.Domain.ValueObjects
 {
-    public string Value { get; }
-
-    public Username(string value)
+    public class Username : ValueObject
     {
-        Value = value;
-        new UsernameValidator().Validate(this); // Автоматическая валидация
+        public string Value { get; }
+
+        public Username(string value)
+        {
+            new UsernameValidator().Validate(this);
+            Value = value;
+        }
+
+        protected override IEnumerable<object> GetAtomicValues() => new[] { Value };
+        public static implicit operator string(Username username) => username.Value;
     }
-
-    protected override IEnumerable<object> GetAtomicValues()
-    {
-        yield return Value;
-    }
-
-    // Необязательно: для удобства вывода
-    public override string ToString() => Value;
-
-    // Необязательно: implicit оператор для строки
-    public static implicit operator string(Username username) => username.Value;
 }
